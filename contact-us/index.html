@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="format-detection" content="email=no" />
+  <link rel="icon" type="image/png" href="../../_astro/favicon.C7VaowoF.png" />
+  <title>Perkūnas RT | Contact us</title>
+  <meta name="description" content="Contact the Perkūnas RT team for partnership, membership, or general inquiries. We're a student team from Lithuania building a race car for the Formula Student competition." />
+  <link rel="alternate" hreflang="lt" href="https://perkunasrt.com/susisiekite" />
+  <link rel="alternate" hreflang="en" href="index.html" />
+  <link rel="canonical" href="https://perkunasrt.com/contact" />
+  <meta property="og:title" content="Contact Us | Perkūnas RT – Formula Student Team" />
+  <meta property="og:description" content="Get in touch with the Perkūnas RT team for partnerships, membership inquiries, or general questions." />
+  <meta property="og:image" content="../../_astro/TeamFromDrone.7kRmZBe6.png" />
+  <meta property="og:url" content="https://perkunasrt.com/contact" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      background-color: #121212;
+      background-image:
+      linear-gradient(rgba(255, 213, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 213, 0, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* NAVBAR */
+    .navBar {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 10000;
+      background-color: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ffd500;
+      box-shadow: 0 3px 10px rgba(255, 213, 0, 0.5);
+      backdrop-filter: saturate(180%) blur(10px);
+      transition: background-color 0.3s ease;
+    }
+    .navBar:hover {
+      background-color: rgba(0,0,0,1);
+    }
+
+    .containerNav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      gap: 24px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 45px;
+      cursor: pointer;
+      user-select: none;
+      filter: drop-shadow(0 0 4px #ffd500);
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #ffd500;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      user-select: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 4px;
+      background: #ffd500;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffd500;
+      color: #111;
+      outline: none;
+      box-shadow: 0 0 10px #ffd500aa;
+    }
+
+    /* MAIN CONTENT */
+main {
+  max-width: 1100px;
+  margin: 110px auto 80px auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  flex-wrap: nowrap; /* nebeleis išsidėstyti po viena */
+}
+
+.card.contact,
+.card.info {
+  flex: 1 1 500px; /* arba fiksuotas plotis pvz. 45%, 500px ir t.t. */
+  max-width: 500px; /* max plotis */
+}
+@media (max-width: 1050px) {
+  main {
+    flex-wrap: wrap;
+  }
+  .card.contact,
+  .card.info {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.card {
+  background: rgba(255, 213, 0, 0.1);  /* šviesiai geltonas permatomas fonas */
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow:
+    0 4px 15px rgba(255, 213, 0, 0.3),
+    inset 0 0 10px rgba(255, 213, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  backdrop-filter: saturate(180%) blur(15px);
+  color: #222;  /* tamsus tekstas */
+  user-select: text;
+}
+
+.card:hover {
+  box-shadow:
+    0 6px 25px rgba(255, 213, 0, 0.6),
+    inset 0 0 15px rgba(255, 213, 0, 0.3);
+  color: #111; /* tamsesnis tekstas hover metu */
+}
+
+.card h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffd500;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px #ffd500aa;
+  user-select: none;
+}
+
+.card p {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  user-select: text;
+}
+
+
+    /* FORM */
+    .form-container {
+      background: rgba(255 255 255 / 0.95);
+      padding: 2.5rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+      backdrop-filter: saturate(180%) blur(15px);
+      -webkit-backdrop-filter: saturate(180%) blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      color: #222;
+      transition: box-shadow 0.3s ease;
+    }
+    .form-container:hover,
+    .form-container:focus-within {
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+    }
+
+    form.form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+      color: #222;
+      user-select: none;
+      letter-spacing: 0.03em;
+    }
+
+    input, textarea, select {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1.8px solid #ddd;
+      margin-bottom: 1.8rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline-offset: 2px;
+      outline-color: transparent;
+      resize: vertical;
+      min-height: 48px;
+      color: #222;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #ffcc00;
+      outline-color: #ffcc00;
+      box-shadow: 0 0 10px #ffcc00aa;
+    }
+
+    textarea {
+      min-height: 140px;
+      line-height: 1.5;
+    }
+
+    select {
+      appearance: none;
+      background: url('data:image/svg+xml;charset=US-ASCII,<svg fill="%23222222" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1.2rem center;
+      background-size: 1.2rem;
+      padding-right: 3.5rem;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: #ffcc00;
+      color: #121212;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 18px 0;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      box-shadow: 0 5px 20px rgba(255,204,0,0.5);
+      letter-spacing: 0.05em;
+    }
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-color: #e6b800;
+      box-shadow: 0 7px 25px rgba(230,184,0,0.7);
+      outline: none;
+    }
+
+    /* CONTACT SOCIALS */
+    .contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-socials a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 68px;
+  height: 68px;
+  background: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-socials a:hover,
+.contact-socials a:focus {
+  transform: scale(1.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.contact-socials img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.contact-socials a:hover img,
+.contact-socials a:focus img {
+  transform: scale(1.1);
+    /* SUPPORT EMAIL */
+    .support-email {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      border-bottom: 2px solid #ffcc00;
+      user-select: all;
+      transition: background-color 0.2s ease;
+      color: #444;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 6px;
+    }
+    .support-email:hover,
+    .support-email:focus {
+      background-color: #fff8b3;
+      outline: none;
+    }
+
+    .last {
+      margin-bottom: 3rem;
+    }
+  }
+
+    /* FOOTER */
+    .b-block {
+      background: #0b0f14;
+      padding: 20px 0;
+      border-top: 2px solid #ffd500;
+      margin-top: auto;
+      color: #eee;
+    }
+    .containerFoot {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo-img-footer {
+      height: 45px;
+      filter: drop-shadow(0 0 4px #ffd500);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+    }
+    .linksFoot {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      display: inline-block;
+    }
+    .social-icon {
+      height: 28px;
+      width: 28px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .social-icon:hover {
+      filter: brightness(1.3);
+    }
+    .email {
+      font-weight: 600;
+      color: #ffd500;
+      font-size: 1rem;
+      user-select: text;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+
+    /* Responsive Footer */
+    @media (max-width: 768px) {
+      .containerFoot {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+      }
+      .logo-img-footer {
+        width: 160px;
+      }
+      .email {
+        font-size: 1.1rem;
+      }
+      .social-icon {
+        width: 36px;
+        height: 36px;
+      }
+    }
+    
+  </style>
+
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".form");
+      if (!form) return;
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        // Anti-spam fields
+        const captcha = document.createElement("input");
+        captcha.type = "hidden";
+        captcha.name = "_captcha";
+        captcha.value = "false";
+        form.appendChild(captcha);
+
+        const honey = document.createElement("input");
+        honey.type = "text";
+        honey.name = "_honey";
+        honey.style.display = "none";
+        form.appendChild(honey);
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" },
+            });
+
+            if (response.ok) {
+              showFlash("Message sent successfully!", "success");
+              form.reset();
+            } else {
+              throw new Error("Form submission failed");
+            }
+          } catch {
+            showFlash("Error sending message. Please try again or contact us directly by email.", "error");
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send";
+            form.removeChild(captcha);
+            form.removeChild(honey);
+          }
+        }
+      });
+
+      function showFlash(message, type) {
+        const flash = document.createElement("div");
+        flash.className = `flash-message ${type}`;
+        flash.textContent = message;
+        flash.style.position = "fixed";
+        flash.style.top = "80px";
+        flash.style.left = "50%";
+        flash.style.transform = "translateX(-50%)";
+        flash.style.backgroundColor = type === "success" ? "#4CAF50" : "#F44336";
+        flash.style.color = "#fff";
+        flash.style.padding = "15px 30px";
+        flash.style.borderRadius = "6px";
+        flash.style.fontWeight = "600";
+        flash.style.boxShadow = "0 4px 12px rgba(0,0,0,0.25)";
+        flash.style.zIndex = "1500";
+        flash.style.opacity = "1";
+        flash.style.transition = "opacity 0.5s ease-out";
+        document.body.appendChild(flash);
+        setTimeout(() => {
+          flash.style.opacity = "0";
+          setTimeout(() => document.body.removeChild(flash), 500);
+        }, 1800);
+      }
+    });
+
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
+</head>
+
+<body>
+  
+  <div class="navBar" role="banner" aria-label="Primary navigation">
+    <div class="containerNav">
+      <a href="../index.html" class="logo" aria-label="Perkūnas RT Logo">
+        <img src="../images/logo.DW5XiSKA.png" alt="Perkūnas Logo" />
+      </a>
+      <nav role="navigation" aria-label="Primary navigation">
+        <a href="../about-us/index.html">ABOUT US</a>
+        <a href="../team/index.html">TEAM</a>
+        <a href="../partners/index.html">PARTNERS</a>
+        <a href="../join-us/index.html">JOIN US</a>
+        <a href="../support-us/index.html">SUPPORT US</a>
+        <a href="contact-us/index.html" aria-current="page">CONTACT US</a>
+      </nav>
+    </div>
+  </div>
+
+  <main role="main" aria-labelledby="contact-title">
+    <section class="card contact" aria-label="Contact form section">
+      <h1 id="contact-title">Contact Us</h1>
+      <div class="form-container">
+        <form
+          class="form"
+          action="https://formsubmit.co/perkunasrt@gmail.com"
+          method="POST"
+          novalidate
+        >
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="Name"
+            placeholder="Your full name"
+            id="name"
+            required
+            autocomplete="name"
+            aria-required="true"
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="Email"
+            placeholder="your.email@example.com"
+            id="email"
+            required
+            autocomplete="email"
+            aria-required="true"
+          />
+
+          <label for="message">Message</label>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            id="message"
+            required
+            aria-required="true"
+          ></textarea>
+
+          <label for="reason">Subject</label>
+          <select name="Reason" id="reason" required aria-required="true">
+            <option value="" disabled selected>Select a subject</option>
+            <option value="Sponsorship">Partnership</option>
+            <option value="Recruitment">Membership</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="card info" aria-label="Contact information and social media">
+      <p>
+        For partnership, membership in the organization, or other inquiries, you can use the form or send an email directly to one of the following addresses:
+      </p>
+     <p>
+  <a href="mailto:perkunasrt@gmail.com" class="support-email copy-email" tabindex="0" aria-label="Email perkunasrt@gmail.com">
+    perkunasrt@gmail.com
+  </a>
+</p>
+<p>
+  <a href="mailto:benluk2@ktu.lt" class="support-email copy-email" tabindex="0" aria-label="Email benluk2@ktu.lt">
+    benluk2@ktu.lt
+  </a>
+</p>
+<p>
+  <a href="mailto:deimic@ktu.lt" class="support-email copy-email" tabindex="0" aria-label="Email deimic@ktu.lt">
+    deimic@ktu.lt
+  </a>
+</p>
+
+      <p class="last" aria-hidden="true"></p>
+
+      <p style="text-align: center; font-weight: 600; color: #555;">
+        You can also contact us through social media!
+      </p>
+      <div class="contact-socials" role="list">
+        <a href="https://www.instagram.com/perkunas_racing_ktu/" target="_blank" rel="noopener" aria-label="Instagram" role="listitem">
+          <img src="../images/instagram.VUFQ3l_n.png" alt="Instagram logo" />
+        </a>
+        <a href="https://www.linkedin.com/company/perkunasrt/" target="_blank" rel="noopener" aria-label="LinkedIn" role="listitem">
+          <img src="../images/linkedin.DgLzhU7_.png" alt="LinkedIn logo" />
+        </a>
+        <a href="https://www.tiktok.com/@perknasrt_ktu" target="_blank" rel="noopener" aria-label="TikTok" role="listitem">
+          <img src="../images/tiktok.DhATMZaU.png" alt="TikTok logo" />
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61575797945434" target="_blank" rel="noopener" aria-label="Facebook" role="listitem">
+          <img src="../images/facebook.DFt5a5XP.png" alt="Facebook logo" />
+        </a>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="b-block footer" role="contentinfo">
+    <div class="containerFoot">
+      <div class="logo">
+        <img
+          src="../images/logo.DW5XiSKA.png"
+          alt="Perkūnas logo"
+          class="logo-img-footer"
+          draggable="false"
+        />
+      </div>
+      <div class="linksFoot">
+        <div class="socials">
+          <a href="https://www.instagram.com/perkunas_racing_ktu/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="../images/instagram.CsCcNGYk.png" alt="Instagram logo" class="social-icon" />
+          </a>
+          <a href="https://www.linkedin.com/company/perkunasrt/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="../images/linkedin.DSVuZdlt.png" alt="LinkedIn logo" class="social-icon" />
+          </a>
+          <a href="https://www.tiktok.com/@perknasrt_ktu" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="../images/tiktok.CtOAf05B.png" alt="TikTok logo" class="social-icon" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61575797945434" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="../images/facebook.Xxxe5tGu.png" alt="Facebook logo" class="social-icon" />
+          </a>
+        </div>
+        <div class="email" tabindex="0" role="textbox" aria-label="Email perkunasrt@gmail.com">perkunasrt@gmail.com</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

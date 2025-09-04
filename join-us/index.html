@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="format-detection" content="email=no" />
+  <link rel="icon" type="image/png" href="../images/favicon.C7VaowoF.png" />
+  <title>Perkūnas RT | Join us</title>
+  <meta name="description" content="Join Perkūnas RT and gain practical experience in engineering, design, business, and teamwork. Build the future of racing with Lithuania’s student team." />
+  <link rel="alternate" hreflang="lt" href="https://perkunasrt.com/prisijunkite" />
+  <link rel="alternate" hreflang="en" href="index.html" />
+  <link rel="canonical" href="https://perkunasrt.com/join" />
+  <meta property="og:title" content="Join Us | Perkūnas RT – Build the Future of Racing" />
+  <meta property="og:description" content="Are you passionate about engineering, design, or business? Join Perkūnas RT, a student team building a race car for the Formula Student competition." />
+  <meta property="og:image" content="../../_astro/TeamFromDrone.7kRmZBe6.png" />
+  <meta property="og:url" content="https://perkunasrt.com/join" />
+  <meta property="og:type" content="website" />
+
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      background-color: #121212;
+      background-image:
+      linear-gradient(rgba(255, 213, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 213, 0, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* NAVBAR */
+    .navBar {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 10000;
+      background-color: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ffd500;
+      box-shadow: 0 3px 10px rgba(255, 213, 0, 0.5);
+      backdrop-filter: saturate(180%) blur(10px);
+      transition: background-color 0.3s ease;
+    }
+    .navBar:hover {
+      background-color: rgba(0,0,0,1);
+    }
+
+    .containerNav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      gap: 24px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 45px;
+      cursor: pointer;
+      user-select: none;
+      filter: drop-shadow(0 0 4px #ffd500);
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #ffd500;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      user-select: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 4px;
+      background: #ffd500;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffd500;
+      color: #111;
+      outline: none;
+      box-shadow: 0 0 10px #ffd500aa;
+    }
+
+    /* Main content styling */
+    main {
+      padding-top: 100px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      flex-grow: 1;
+    }
+
+    /* Join us container */
+    .join-us {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+    }
+    .to-join,
+    .join-info {
+      flex: 1 1 45%;
+      background: rgba(255, 213, 0, 0.1);
+      border-radius: 20px;
+      padding: 30px 40px;
+      box-shadow:
+        0 4px 15px rgba(255, 213, 0, 0.3),
+        inset 0 0 10px rgba(255, 213, 0, 0.15);
+      transition: box-shadow 0.3s ease;
+      backdrop-filter: saturate(180%) blur(15px);
+      color: #222;
+    }
+    .to-join:hover,
+    .join-info:hover {
+      box-shadow:
+        0 6px 25px rgba(255, 213, 0, 0.6),
+        inset 0 0 15px rgba(255, 213, 0, 0.3);
+      color: #111;
+    }
+
+    /* Headings */
+    .to-join h1,
+    .join-info h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffd500;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #ffd500aa;
+      user-select: none;
+    }
+
+    /* Paragraphs */
+    .first-p {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      user-select: text;
+    }
+
+    /* Lists */
+    ul {
+      list-style-type: disc;
+      padding-left: 1.3em;
+      color: #ffffff;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      user-select: text;
+      transition: color 0.3s ease;
+    }
+    ul li {
+      margin-bottom: 15px;
+    }
+    ul li.first-p {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      background: linear-gradient(45deg, #ffd500, #ffea00);
+      color: #111;
+      text-decoration: none;
+      box-shadow:
+        0 0 10px #ffd500aa,
+        0 4px 10px #ffea0088;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .button:hover,
+    .button:focus {
+      background: linear-gradient(45deg, #fff600, #ffd600);
+      box-shadow:
+        0 0 20px #fff700cc,
+        0 6px 20px #ffd600cc;
+      transform: scale(1.05);
+      outline: none;
+      color: #222;
+    }
+
+    /* Image styling */
+    .image-b {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ffd600cc;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: default;
+      user-select: none;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .image-b:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #fff600ee;
+    }
+
+    /* Footer */
+    .b-block {
+      background: #0b0f14;
+      padding: 20px 0;
+      border-top: 2px solid #ffd500;
+      margin-top: auto;
+      color: #eee;
+    }
+    .containerFoot {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo-img-footer {
+      height: 45px;
+      filter: drop-shadow(0 0 4px #ffd500);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+    }
+    .linksFoot {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      display: inline-block;
+    }
+    .social-icon {
+      height: 28px;
+      width: 28px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .social-icon:hover {
+      filter: brightness(1.3);
+    }
+    .email {
+      font-weight: 600;
+      color: #ffd500;
+      font-size: 1rem;
+      user-select: text;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .join-us {
+        flex-direction: column;
+        padding: 30px 10px;
+        gap: 35px;
+      }
+      .to-join,
+      .join-info {
+        width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .to-join h1,
+      .join-info h1 {
+        font-size: 2rem;
+      }
+      .button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+      .first-p {
+        font-size: 1rem;
+      }
+      ul {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+   <div class="navBar">
+    <div class="containerNav">
+      <a href="../index.html" class="logo" aria-label="Perkūnas RT Logo">
+        <img src="../images/logo.DW5XiSKA.png" alt="Perkūnas Logo" />
+      </a>
+      <nav>
+        <a href="../about-us/index.html">ABOUT US</a>
+        <a href="../team/index.html">TEAM</a>
+        <a href="../partners/index.html">PARTNERS</a>
+        <a href="index.html">JOIN US</a>
+        <a href="../support-us/index.html">SUPPORT US</a>
+        <a href="../contact-us/index.html">CONTACT US</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="join-us container" aria-labelledby="joinus-title">
+      <article class="to-join" tabindex="0">
+        <h1 id="joinus-title">Want to join?</h1>
+        <p class="first-p">
+          To join, click the button below and fill out the form. We are looking for new members in September and February, but if
+          you have experience in engineering, business, or even in Formula Student competitions – we will take that into consideration.
+        </p>
+        <a
+          class="button"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdwLiYJsdeDij5YE5FDXWvOn8sIecHKf9AITatkuBPsYKg6zQ/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          >JOIN</a
+        >
+      </article>
+      <article class="join-info" tabindex="0">
+        <h1>What will you gain by joining?</h1>
+        <ul>
+          <li class="first-p">You will gain practical experience in creating, designing, and testing a high-quality vehicle.</li>
+          <li>By working with sponsors and representing the team, you will learn about business, marketing, and project management.</li>
+          <li>You will develop teamwork, leadership, and time management skills in a collaborative environment.</li>
+          <li>You will build connections with university professors and industry partners, expanding your professional network.</li>
+          <li>You will gain valuable knowledge and skills that will help you prepare for future engineering and business challenges.</li>
+        </ul>
+      </article>
+      <article aria-hidden="true" style="flex-basis: 100%; height: 0; overflow: hidden;"></article>
+      <div style="width:100%; max-width:600px; margin: 0 auto;">
+        <img src="../images/Team.CC8i-R1_.png" alt="PerkunasRT team" class="image-b" />
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="b-block" role="contentinfo">
+    <div class="containerFoot container">
+      <div class="logo">
+        <img src="../images/logo.DW5XiSKA.png" alt="Perkūnas" class="logo-img-footer" />
+      </div>
+      <div class="linksFoot">
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.instagram.com/perkunas_racing_ktu/" target="_blank" rel="noopener noreferrer">
+            <img src="../images/instagram.CsCcNGYk.png" alt="instagram" class="social-icon" />
+          </a>
+          <a href="https://www.linkedin.com/company/perkunasrt/" target="_blank" rel="noopener noreferrer">
+            <img src="../images/linkedin.DSVuZdlt.png" alt="Linkedin" class="social-icon" />
+          </a>
+          <a href="https://www.tiktok.com/@perknasrt_ktu?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">
+            <img src="../images/tiktok.CtOAf05B.png" alt="tiktok" class="social-icon" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61575797945434" target="_blank" rel="noopener noreferrer">
+            <img src="../images/facebook.Xxxe5tGu.png" alt="facebook" class="social-icon" />
+          </a>
+        </div>
+        <div class="email" tabindex="0">perkunasrt@gmail.com</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("primary-navigation");
+      nav.classList.toggle("active");
+      // Update aria-expanded for accessibility
+      const hamburger = document.querySelector(".hamburger");
+      if (hamburger) {
+        const expanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!expanded));
+      }
+    }
+  </script>
+</body>
+</html>
