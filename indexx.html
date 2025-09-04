@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Perkūnas RT | Home</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background: #0a0a0a;
+    }
+    .navBar {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 10000;
+      background-color: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ffd500;
+      box-shadow: 0 3px 10px rgba(255, 213, 0, 0.5);
+      backdrop-filter: saturate(180%) blur(10px);
+      transition: background-color 0.3s ease;
+    }
+    .navBar:hover {
+      background-color: rgba(0,0,0,1);
+    }
+    .containerNav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      gap: 24px;
+    }
+    .logo {
+      flex-shrink: 0;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 45px;
+      cursor: pointer;
+      user-select: none;
+      filter: drop-shadow(0 0 4px #ffd500);
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+    nav a {
+      color: #ffd500;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      user-select: none;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 4px;
+      background: #ffd500;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffd500;
+      color: #111;
+      outline: none;
+      box-shadow: 0 0 10px #ffd500aa;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 90vh;
+      margin-top: 56px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+      color: #fff200;
+      z-index: 0;
+      background: linear-gradient(135deg, #0a0a0a, #121212);
+    }
+    #particle-canvas, #tech-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none; /* Kad nesikištų į pelės paspaudimus */
+    }
+    /* Techninis brėžinys ant viršaus dalelių fono, bet žemiau teksto */
+    #tech-canvas {
+      z-index: 1;
+      opacity: 0.12; /* Labai subtilus efektas */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      background: rgba(0,0,0,0.6);
+      padding: 40px 60px;
+      border-radius: 20px;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px #ff0;
+      animation: textReveal 1.5s forwards ease-out 0.5s;
+    }
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 0.5em;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5em;
+    }
+    .btn-primary {
+      background-color: #ffd500;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      box-shadow: 0 0 15px #ffd500aa;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #ffbb00;
+      box-shadow: 0 0 25px #ffdb00;
+      outline: none;
+    }
+    @keyframes textReveal {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* TEAM SECTION */
+    .team-section {
+      background: #111;
+      color: #ffd500;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 2px solid #ffd500;
+      user-select: none;
+    }
+    .team-section h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .team-photo {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px #ffd500aa;
+      cursor: default;
+      user-select: none;
+    }
+    .team-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      filter: drop-shadow(0 0 10px #ffd50088);
+      transition: transform 0.4s ease;
+    }
+    .team-photo img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sponsors Section */
+    .partners-section {
+      background: #111;
+      padding: 50px 20px 40px;
+      text-align: center;
+      border-top: 2px solid #ff0;
+    }
+    .partners-header {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #ff0;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    .sponsor-ticker {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 0 10px;
+    }
+    .sponsor-ticker-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollSponsors 30s linear infinite;
+    }
+    .sponsor-ticker-content img {
+      height: 90px;
+      margin: 0 50px;
+      vertical-align: middle;
+      filter: grayscale(0.2);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .sponsor-ticker-content img:hover {
+      filter: none;
+    }
+    @keyframes scrollSponsors {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Footer */
+    .b-block {
+      background: #0b0f14;
+      padding: 20px 0;
+      border-top: 2px solid #ffd500;
+      margin-top: auto;
+      color: #eee;
+    }
+    .containerFoot {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo-img-footer {
+      height: 45px;
+      filter: drop-shadow(0 0 4px #ffd500);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+    }
+    .linksFoot {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      display: inline-block;
+    }
+    .social-icon {
+      height: 28px;
+      width: 28px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .social-icon:hover {
+      filter: brightness(1.3);
+    }
+    .email {
+      font-weight: 600;
+      color: #ffd500;
+      font-size: 1rem;
+      user-select: text;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .partners-header {
+        font-size: 2rem;
+      }
+      .sponsor-ticker-content img {
+        height: 60px;
+        margin: 0 30px;
+      }
+      .team-section h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        font-size: 0.9rem;
+      }
+      .sponsor-ticker-content img {
+        height: 45px;
+        margin: 0 20px;
+      }
+      .team-section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navBar">
+    <div class="containerNav">
+      <a href="index.html" class="logo" aria-label="Perkūnas RT Logo">
+        <img src="images/logo.DW5XiSKA.png" alt="Perkūnas Logo" />
+      </a>
+      <nav>
+        <a href="about-us/index.html">ABOUT US</a>
+        <a href="team/index.html">TEAM</a>
+        <a href="partners/index.html">PARTNERS</a>
+        <a href="join-us/index.html">JOIN US</a>
+        <a href="support-us/index.html">SUPPORT US</a>
+        <a href="contact-us/index.html">CONTACT US</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero" aria-label="Main Team Photo with title">
+    <canvas id="particle-canvas"></canvas>
+    <canvas id="tech-canvas"></canvas>
+    <div class="hero-content" tabindex="0">
+      <h1>The Speed of the Future</h1>
+      <p>Driven by passion, engineered for victory.</p>
+      <button class="btn-primary" onclick="window.location.href='join-us/index.html'">Join Us</button>
+    </div>
+  </section>
+
+  <!-- Naujas komandos skyrius -->
+  <section class="team-section" aria-label="Our Team">
+    <h2>Meet Our Team</h2>
+    <div class="team-photo" role="img" aria-label="Team photo of Perkūnas Racing Team">
+      <img src="images/TeamFromDrone.7kRmZBe6.png" alt="Perkūnas Racing Team members standing together" />
+    </div>
+  </section>
+
+  <section class="partners-section" aria-label="Sponsors">
+    <h2 class="partners-header">Our Partners</h2>
+    <div class="sponsor-ticker" aria-label="Sponsors scrolling logos">
+      <div class="sponsor-ticker-content" aria-hidden="true">
+        <img src="images/iremas.2M2nfcBa.png" alt="Iremas" />
+        <img src="images/ansys.CGZJmO8M.png" alt="Ansys" />
+        <img src="images/rapidharness.CEKG1Zqb.png" alt="RapidHarness" />
+        <img src="images/SolifWorks.Do3iGUPZ.png" alt="SolidWorks" />
+        <img src="images/easy-composites.DhpO-eN-.png" alt="Easy Composites" />
+        <img src="images/nuke_performance.CyX2fCvX.png" alt="Nuke Performance" />
+        <img src="images/Vi-Grade.nerbgz3M.png" alt="VI-grade" />
+        <img src="images/hostinger.DsncjkBY.png" alt="Hostinger" />
+        <img src="images/pro-wire.BptcbhSz.png" alt="ProWireUSA" />
+        <img src="images/radium-engineering.BXjKsCKP.png" alt="Radium Engineering" />
+        <img src="images/skf.BPpPFOq4.png" alt="SKF" />
+        <img src="images/xtra-motorsport.CGNPFBur.png" alt="Xtra Motorsport" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="b-block" role="contentinfo">
+    <div class="containerFoot container">
+      <div class="logo">
+        <img src="images/logo.DW5XiSKA.png" alt="Perkūnas" class="logo-img-footer" />
+      </div>
+      <div class="linksFoot">
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.instagram.com/perkunas_racing_ktu/" target="_blank" rel="noopener noreferrer">
+            <img src="images/instagram.CsCcNGYk.png" alt="instagram" class="social-icon" />
+          </a>
+          <a href="https://www.linkedin.com/company/perkunasrt/" target="_blank" rel="noopener noreferrer">
+            <img src="images/linkedin.DSVuZdlt.png" alt="Linkedin" class="social-icon" />
+          </a>
+          <a href="https://www.tiktok.com/@perknasrt_ktu?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">
+            <img src="images/tiktok.CtOAf05B.png" alt="tiktok" class="social-icon" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61575797945434" target="_blank" rel="noopener noreferrer">
+            <img src="images/facebook.Xxxe5tGu.png" alt="facebook" class="social-icon" />
+          </a>
+        </div>
+        <div class="email" tabindex="0">perkunasrt@gmail.com</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      const techCanvas = document.getElementById('tech-canvas');
+      const techCtx = techCanvas.getContext('2d');
+      let width, height;
+      const PARTICLE_COUNT = 100;
+      const MAX_DISTANCE = 120;
+      let particles = [];
+
+      // Resizes both canvases
+      function resize() {
+        width = window.innerWidth;
+        height = document.querySelector('.hero').offsetHeight;
+        canvas.width = width;
+        canvas.height = height;
+        techCanvas.width = width;
+        techCanvas.height = height;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // Particle class for moving dots
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.6;
+          this.vy = (Math.random() - 0.5) * 0.6;
+          this.radius = 2 + Math.random() * 2;
+        }
+        move() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if(this.x < 0 || this.x > width) this.vx *= -1;
+          if(this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+          ctx.beginPath();
+          const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius*4);
+          gradient.addColorStop(0, 'rgba(255, 213, 0, 0.8)');
+          gradient.addColorStop(1, 'rgba(255, 213, 0, 0)');
+          ctx.fillStyle = gradient;
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // Connect particles with lines
+      function connectParticles() {
+        for(let i = 0; i < PARTICLE_COUNT; i++) {
+          for(let j = i+1; j < PARTICLE_COUNT; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if(dist < MAX_DISTANCE) {
+              ctx.strokeStyle = `rgba(255, 213, 0, ${(1 - dist/MAX_DISTANCE) * 0.3})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      // Draw technical lines on tech canvas
+      function drawTechLines() {
+        techCtx.clearRect(0, 0, width, height);
+        techCtx.strokeStyle = 'rgba(255, 213, 0, 0.15)';
+        techCtx.lineWidth = 1;
+
+        const gapX = 120;
+        const gapY = 90;
+
+        // Horizontal lines
+        for(let y = 0; y < height; y += gapY) {
+          techCtx.beginPath();
+          techCtx.moveTo(0, y);
+          techCtx.lineTo(width, y);
+          techCtx.stroke();
+        }
+
+        // Vertical lines
+        for(let x = 0; x < width; x += gapX) {
+          techCtx.beginPath();
+          techCtx.moveTo(x, 0);
+          techCtx.lineTo(x, height);
+          techCtx.stroke();
+        }
+
+        // Diagonal "technical" lines (like schematic wiring)
+        techCtx.beginPath();
+        for(let i = 0; i < width; i += gapX) {
+          techCtx.moveTo(i, 0);
+          techCtx.lineTo(i + gapX/2, height);
+        }
+        techCtx.stroke();
+
+        techCtx.beginPath();
+        for(let i = 0; i < width; i += gapX) {
+          techCtx.moveTo(i, height);
+          techCtx.lineTo(i + gapX/2, 0);
+        }
+        techCtx.stroke();
+      }
+
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+          p.move();
+          p.draw();
+        });
+        connectParticles();
+        drawTechLines();
+        requestAnimationFrame(animate);
+      }
+
+      // Initialize particles
+      for(let i=0; i<PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+      }
+
+      animate();
+    })();
+  </script>
+
+</body>
+</html>

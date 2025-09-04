@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="format-detection" content="email=no" />
+  <link rel="icon" type="image/png" href="../images/favicon.C7VaowoF.png" />
+  <title>Perkūnas RT | Support us</title>
+  <meta
+    name="description"
+    content="Support the Perkūnas RT team and help build the future of engineering! Learn how to donate 1.2% GPM or contribute through other platforms. Your support fuels innovation, teamwork, and motorsport excellence."
+  />
+  <link rel="alternate" hreflang="lt" href="https://perkunasrt.com/paremkite" />
+  <link rel="alternate" hreflang="en" href="index.html" />
+  <link rel="canonical" href="https://perkunasrt.com/support-us" />
+  <meta property="og:title" content="Support us | Perkūnas RT – Help Build the Future of Engineering" />
+  <meta
+    property="og:description"
+    content="Help the Perkūnas RT team by donating 1.2% GPM or supporting through crowdfunding platforms. Together, we'll build a competitive race car and foster engineering talent."
+  />
+  <meta property="og:image" content="../images/TeamFromDrone.7kRmZBe6.png" />
+  <meta property="og:url" content="https://perkunasrt.com/support-us" />
+  <meta property="og:type" content="website" />
+
+  <!-- Orbitron šrifto importas iš Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      background-color: #121212;
+      background-image:
+      linear-gradient(rgba(255, 213, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 213, 0, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* NAVBAR */
+    .navBar {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 10000;
+      background-color: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ffd500;
+      box-shadow: 0 3px 10px rgba(255, 213, 0, 0.5);
+      backdrop-filter: saturate(180%) blur(10px);
+      transition: background-color 0.3s ease;
+    }
+    .navBar:hover {
+      background-color: rgba(0,0,0,1);
+    }
+
+    .containerNav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      gap: 24px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 45px;
+      cursor: pointer;
+      user-select: none;
+      filter: drop-shadow(0 0 4px #ffd500);
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #ffd500;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      user-select: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 4px;
+      background: #ffd500;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffd500;
+      color: #111;
+      outline: none;
+      box-shadow: 0 0 10px #ffd500aa;
+    }
+
+    /* MAIN content */
+    main {
+      padding-top: 100px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      flex-grow: 1;
+    }
+
+    /* Content block */
+    .w-block {
+      background: rgba(255, 213, 0, 0.1);
+      border-radius: 20px;
+      padding: 40px 40px;
+      box-shadow:
+        0 4px 15px rgba(255, 213, 0, 0.3),
+        inset 0 0 10px rgba(255, 213, 0, 0.15);
+      color: #222;
+      user-select: text;
+      transition: box-shadow 0.3s ease;
+      backdrop-filter: saturate(180%) blur(15px);
+    }
+    .w-block:hover {
+      box-shadow:
+        0 6px 25px rgba(255, 213, 0, 0.6),
+        inset 0 0 15px rgba(255, 213, 0, 0.3);
+      color: #111;
+    }
+
+    .card {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .GPM,
+    .support {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffd500;
+      margin-bottom: 25px;
+      user-select: none;
+      text-shadow: 0 0 10px #ffd500aa;
+    }
+
+    p {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      color: #ffffff;
+    }
+
+    a.pdf {
+      text-decoration: underline;
+      color:  #b7b7b7;
+      font-weight: 700;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    a.pdf:hover,
+    a.pdf:focus {
+      color: #ffffff;
+      outline: none;
+    }
+
+    .support-email {
+      cursor: pointer;
+      text-decoration: underline;
+      user-select: all;
+      -webkit-user-select: all;
+      -moz-user-select: all;
+      -ms-user-select: all;
+      color: #b7b7b7;
+      font-weight: 700;
+    }
+    .support-email:hover,
+    .support-email:focus {
+      color: #ffffff;
+      outline: none;
+    }
+
+    .donate {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .donate a {
+      display: inline-block;
+      background: linear-gradient(45deg, #ffd500, #ffea00);
+      padding: 14px 36px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #111;
+      text-decoration: none;
+      box-shadow:
+        0 0 10px #ffd500aa,
+        0 4px 10px #ffea0088;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .donate a:hover,
+    .donate a:focus {
+      background: linear-gradient(45deg, #fff600, #ffd600);
+      box-shadow:
+        0 0 20px #fff700cc,
+        0 6px 20px #ffd600cc;
+      transform: scale(1.05);
+      outline: none;
+      color: #222;
+    }
+
+    .image-b {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ffd600cc;
+      margin: 0 auto 20px;
+      user-select: none;
+      display: block;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: default;
+      object-fit: cover;
+    }
+    .image-b:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #fff600ee;
+    }
+
+    /* Footer */
+    .b-block {
+      background: #0b0f14;
+      padding: 20px 0;
+      border-top: 2px solid #ffd500;
+      margin-top: auto;
+      color: #eee;
+    }
+    .containerFoot {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo-img-footer {
+      height: 45px;
+      filter: drop-shadow(0 0 4px #ffd500);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+    }
+    .linksFoot {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      display: inline-block;
+    }
+    .social-icon {
+      height: 28px;
+      width: 28px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .social-icon:hover {
+      filter: brightness(1.3);
+    }
+    .email {
+      font-weight: 600;
+      color: #ffd500;
+      font-size: 1rem;
+      user-select: text;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .donate {
+        justify-content: center;
+      }
+      nav {
+        flex-direction: column;
+      }
+      .card {
+        flex-direction: column;
+      }
+      .GPM,
+      .support {
+        width: 100%;
+        flex: none;
+        margin-bottom: 40px;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        text-align: left;
+      }
+      .donate a {
+        width: 100%;
+        text-align: center;
+        padding: 14px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <div class="navBar">
+    <div class="containerNav">
+      <a href="../index.html" class="logo" aria-label="Perkūnas RT Logo">
+        <img src="../images/logo.DW5XiSKA.png" alt="Perkūnas Logo" />
+      </a>
+      <nav>
+        <a href="..//about-us/index.html">ABOUT US</a>
+        <a href="../team/index.html">TEAM</a>
+        <a href="../partners/index.html">PARTNERS</a>
+        <a href="../join-us/index.html">JOIN US</a>
+        <a href="support-us/index.html">SUPPORT US</a>
+        <a href="../contact-us/index.html">CONTACT US</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="w-block first container" aria-labelledby="support-title">
+      <div class="card">
+        <article class="GPM" tabindex="0">
+          <h1 id="support-title">Donate 1.2% GPM!</h1>
+          <img
+            src="../images/gpm.BFzSzPWq.png"
+            alt="Give 1.2% GPM to PerkunasRT team"
+            class="image-b"
+            aria-describedby="support-desc"
+          />
+        </article>
+
+        <article class="support" tabindex="0" aria-describedby="support-desc">
+          <h1>Support us!</h1>
+          <p class="first-p" id="support-desc">
+            If you would like to help us, simply follow the steps in
+            <a
+              href="https://ugc.production.linktr.ee/6f3133ff-ddb9-463b-bd75-395c8c29b987_1-2-paramos-gidas--2-.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pdf"
+              >this PDF file</a
+            >. After filling out the application, please send us the confirmation PDF by email at
+            <span class="support-email">perkunasrt@gmail.com</span>.
+          </p>
+          <p>As a thank you, we will proudly write your name on our car. 🚗💨</p>
+          <p>You can also contribute by transferring a certain amount through the following platforms:</p>
+          <div class="donate">
+            <a
+              href="https://gogetfunding.com/?p=9141413"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+              >Gogetfunding</a
+            >
+            <a
+              href="https://whydonate.com/en/fundraising/perkunasrt-formula-student-team-ktu"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+              >Whydonate</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="b-block" role="contentinfo">
+    <div class="containerFoot container">
+      <div class="logo">
+        <img src="../images//logo.DW5XiSKA.png" alt="Perkūnas" class="logo-img-footer" />
+      </div>
+      <div class="linksFoot">
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.instagram.com/perkunas_racing_ktu/" target="_blank" rel="noopener noreferrer">
+            <img src="../images//instagram.CsCcNGYk.png" alt="instagram" class="social-icon" />
+          </a>
+          <a href="https://www.linkedin.com/company/perkunasrt/" target="_blank" rel="noopener noreferrer">
+            <img src="../images//linkedin.DSVuZdlt.png" alt="Linkedin" class="social-icon" />
+          </a>
+          <a href="https://www.tiktok.com/@perknasrt_ktu?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">
+            <img src="../images//tiktok.CtOAf05B.png" alt="tiktok" class="social-icon" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61575797945434" target="_blank" rel="noopener noreferrer">
+            <img src="../images//facebook.Xxxe5tGu.png" alt="facebook" class="social-icon" />
+          </a>
+        </div>
+        <div class="email" tabindex="0">perkunasrt@gmail.com</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("primary-navigation");
+      const hamburger = document.querySelector(".hamburger");
+      const expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!expanded));
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../images/favicon.C7VaowoF.png" />
+  <title>Perkūnas RT | Team Structure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+      font-family: 'Orbitron', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+      background-color: #121212;
+      background-image:
+      linear-gradient(rgba(255, 213, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 213, 0, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+}
+
+
+
+/* NAVBAR - About Us dizainas */
+
+.navBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: rgba(0,0,0,0.9);
+  border-bottom: 2px solid #ffd500;
+  box-shadow: 0 3px 10px rgba(255, 213, 0, 0.5);
+  backdrop-filter: saturate(180%) blur(10px);
+  transition: background-color 0.3s ease;
+}
+.navBar:hover {
+  background-color: rgba(0,0,0,1);
+}
+
+.containerNav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  gap: 24px;
+}
+
+.logo {
+  flex-shrink: 0;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 45px;
+  cursor: pointer;
+  user-select: none;
+  filter: drop-shadow(0 0 4px #ffd500);
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: #ffd500;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1.5px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  user-select: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 4px;
+  background: #ffd500;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+nav a:hover,
+nav a:focus {
+  background-color: #ffd500;
+  color: #111;
+  outline: none;
+  box-shadow: 0 0 10px #ffd500aa;
+}
+
+    main {
+      padding-top: 100px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      color: #eee;
+    }
+
+    h1.page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #ffd600;
+      letter-spacing: 3px;
+      user-select: none;
+      text-shadow: 0 0 15px #ffd600aa;
+    }
+
+    /* Team cards container */
+    .team-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 40px;
+    }
+
+    /* Card style */
+.team-card {
+  position: relative;
+  background: #2a2a36;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 0 15px #e6c700bb;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  overflow: visible; /* kad pseudo elementai matytųsi už ribų */
+}
+
+/* Viršutinis kairysis kampas */
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #e6c700;
+  border-left: 3px solid #e6c700;
+  border-top-left-radius: 8px;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+  opacity: 0.85;
+}
+
+/* Apatinis dešinysis kampas */
+.team-card::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 3px solid #e6c700;
+  border-right: 3px solid #e6c700;
+  border-bottom-right-radius: 8px;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+  opacity: 0.85;
+}
+
+/* Hover efektas: geltonos linijos paryškėja */
+.team-card:hover::before,
+.team-card:hover::after {
+  border-color: #ffd600;
+  opacity: 1;
+}
+.team-card span::before {
+  bottom: 8px;
+  left: 8px;
+  border-top: none;
+  border-right: none;
+}
+
+.team-card span::after {
+  bottom: 8px;
+  right: 8px;
+  border-top: none;
+  border-left: none;
+}
+
+
+
+    .team-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #ffd600;
+      object-fit: cover;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 0 6px #ffd600aa);
+      transition: transform 0.3s ease;
+    }
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+    .team-name {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .team-role {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .team-email {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #ffd600;
+      text-decoration: underline;
+      cursor: pointer;
+      user-select: all;
+      margin-bottom: 0;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-content {
+      background: #22293f;
+      padding: 30px 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 0 40px #ffd600aa;
+      position: relative;
+      color: #eee;
+      user-select: text;
+    }
+    .modal-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+      color: #ffd600;
+      letter-spacing: 1.5px;
+    }
+    .modal-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffd600;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    .b-block {
+      background: #0b0f14;
+      padding: 20px 0;
+      border-top: 2px solid #ffd500;
+      margin-top: auto;
+      color: #eee;
+    }
+    .containerFoot {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo-img-footer {
+      height: 45px;
+      filter: drop-shadow(0 0 4px #ffd500);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .logo-img-footer:hover {
+      transform: scale(1.05);
+    }
+    .linksFoot {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      display: inline-block;
+    }
+    .social-icon {
+      height: 28px;
+      width: 28px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .social-icon:hover {
+      filter: brightness(1.3);
+    }
+    .email {
+      font-weight: 600;
+      color: #ffd500;
+      font-size: 1rem;
+      user-select: text;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 90vw;
+        padding: 20px;
+        max-height: 70vh;
+      }
+      .team-card img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+    @media (max-width: 480px) {
+      .team-cards {
+        gap: 30px;
+      }
+      .team-card {
+        padding: 15px;
+      }
+      .team-name {
+        font-size: 1.1rem;
+      }
+      .team-role {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navBar">
+    <div class="containerNav">
+      <a href="../index.html" class="logo" aria-label="Perkūnas RT Logo">
+        <img src="../images/logo.DW5XiSKA.png" alt="Perkūnas Logo" />
+      </a>
+      <nav>
+        <a href="../about-us/index.html">ABOUT US</a>
+        <a href="index.html">TEAM</a>
+        <a href="../partners/index.html">PARTNERS</a>
+        <a href="../join-us/index.html">JOIN US</a>
+        <a href="../support-us/index.html">SUPPORT US</a>
+        <a href="../contact-us/index.html">CONTACT US</a>
+      </nav>
+    </div>
+  </div>
+
+<main>
+  <h1 class="page-title">Team Structure</h1>
+  <div class="team-cards" id="teamCards">
+    <!-- Cards will be inserted here by JS -->
+  </div>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div class="modal-content" role="document">
+    <span class="modal-close" id="modalClose" aria-label="Close modal">&times;</span>
+    <h2 id="modalTitle">Title</h2>
+    <p id="modalDesc">Description</p>
+  </div>
+</div>
+
+<script>
+  // Team data
+  const teamMembers = [
+    {
+      name: "Benas Lukoševičius",
+      role: "Chief Engineer",
+      department: "Chief Engineer",
+      email: "benas.lukosevicius@ktu.edu",
+      img: "../images/Benas.CSO4RDZF.png",
+      description: `Benas Lukoševičius is the Chief Engineer leading the technical vision and overseeing the entire project development from concept to track-ready car.`
+    },
+    {
+      name: "Deivid Mico",
+      role: "Deputy Chief Engineer",
+      department: "Deputy Chief Engineer",
+      email: "deivid.mico@ktu.edu",
+      img: "../images/Deivid.CvnwjvLX.png",
+      description: `Deivid Mico supports the Chief Engineer and coordinates between departments to ensure smooth project flow and technical integration.`
+    },
+    {
+      name: "Murad Abdullayev",
+      role: "Lead Engineer, Aerodynamics",
+      department: "Aerodynamics Department",
+      email: "murad.abdullayev@ktu.edu",
+      img: "../images/NoPicture.48BOrpyT.png",
+      description: `Responsible for managing airflow around the car, aiming to increase downforce and reduce drag. The team designs the front 
+                            and rear wings, diffuser, underbody panels, and other elements that help ensure stability at high speeds. Through calculations 
+                            and testing, team members optimize aerodynamic parameters to achieve maximum efficiency on the track.`
+    },
+    {
+      name: "Benas Mangevičius",
+      role: "Lead Engineer, Chassis",
+      department: "Chassis Department",
+      email: "benas.mangevicius@ktu.edu",
+      img: "../images/Benas_M.png.png",
+      description: `Responsible for the car's structure, including the design of the frame and bodywork. The team develops a lightweight and strong chassis 
+                            capable of withstanding racing loads, while ensuring that the body structure is not only safe for the driver but also structurally tight. 
+                            This team works closely with other departments to ensure all components fit, are securely mounted, and function efficiently.`
+    },
+    {
+      name: "Ervinas Rimkevičius",
+      role: "Lead Engineer, Powertrain",
+      department: "Powertrain Department",
+      email: "ervinas.rimkevicius@ktu.edu",
+      img: "../images/Ervinas.4QKraqXQ.png",
+      description: `Designs and integrates the powertrain system, which determines the car's speed, acceleration, and reliability. This department decides 
+                            on the type of engine to be used, designs gearbox solutions, integrates cooling systems, and monitors the thermal and mechanical 
+                            efficiency of the components.`
+    },
+    {
+      name: "Ugnius Trainys",
+      role: "Lead Engineer, Suspension",
+      department: "Suspension Department",
+      email: "ugnius.trainys@ktu.edu",
+      img: "../images/Ugnius.BV_jdF0Y.png",
+      description: `Develops solutions to ensure excellent vehicle handling, stability, and comfort on the track. The team designs wheel geometry, 
+                            shock absorber and spring parameters, control arms, steering mechanisms, and other components. All parts must be precisely tuned 
+                            so that the car can navigate corners optimally, remain agile, and adapt well to the track surface.`
+    },
+    {
+      name: "Mantas Babonas",
+      role: "Lead Engineer, Electronics and Software",
+      department: "Electronics and Software Department",
+      email: "mantas.babonas@ktu.edu",
+      img: "../images/Mantas.DVqcg64O.png",
+      description: `Develops the entire electrical infrastructure: wiring, sensors, control modules, and user interfaces. The team is also responsible for 
+                            data acquisition systems. Using microcontrollers and software, all electronic components are integrated into a unified system that allows 
+                            performance analysis, fault detection, and system improvement.`
+    },
+    {
+      name: "Vytautė Pratkevičiūtė",
+      role: "Team Leader, Business",
+      department: "Business Department",
+      email: "vytaute.pratkeviciute@ktu.edu",
+      img: "../images/Vytaute.y2Qz4yAV.png",
+      description: `Manages sponsor search, collaboration with industry partners, social media content, public relations, project funding, and event 
+                            organization. The team shapes the brand, creatively communicates the team's achievements, and creates engaging visual and informational solutions.`
+    }
+  ];
+
+  // Generate cards dynamically
+  const cardsContainer = document.getElementById('teamCards');
+  teamMembers.forEach(member => {
+    const card = document.createElement('div');
+    card.className = 'team-card';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-pressed', 'false');
+    card.innerHTML = `
+      <img src="${member.img}" alt="${member.name}" />
+      <p class="team-name">${member.name}</p>
+      <p class="team-role">${member.role}</p>
+      <p class="team-email" title="Click to copy email" onclick="copyEmail(event)">${member.email}</p>
+    `;
+    // Open modal on click or enter key
+    card.addEventListener('click', () => openModal(member));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(member);
+      }
+    });
+    cardsContainer.appendChild(card);
+  });
+
+  // Copy email function
+  function copyEmail(e) {
+    e.stopPropagation();
+    const email = e.target.textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      alert('Email copied: ' + email);
+    });
+  }
+
+  // Modal elements
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(member) {
+    modalTitle.textContent = member.department;
+    modalDesc.textContent = member.description;
+    modalOverlay.classList.add('active');
+    modalClose.focus();
+  }
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+  }
+  modalClose.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      closeModal();
+    }
+  });
+</script>
+
+<footer class="b-block" role="contentinfo">
+    <div class="containerFoot container">
+      <div class="logo">
+        <img src="../images/logo.DW5XiSKA.png" alt="Perkūnas" class="logo-img-footer" />
+      </div>
+      <div class="linksFoot">
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.instagram.com/perkunas_racing_ktu/" target="_blank" rel="noopener noreferrer">
+            <img src="../images/instagram.CsCcNGYk.png" alt="instagram" class="social-icon" />
+          </a>
+          <a href="https://www.linkedin.com/company/perkunasrt/" target="_blank" rel="noopener noreferrer">
+            <img src="../images/linkedin.DSVuZdlt.png" alt="Linkedin" class="social-icon" />
+          </a>
+          <a href="https://www.tiktok.com/@perknasrt_ktu?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer">
+            <img src="../images/tiktok.CtOAf05B.png" alt="tiktok" class="social-icon" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61575797945434" target="_blank" rel="noopener noreferrer">
+            <img src="../images/facebook.Xxxe5tGu.png" alt="facebook" class="social-icon" />
+          </a>
+        </div>
+        <div class="email" tabindex="0">perkunasrt@gmail.com</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
